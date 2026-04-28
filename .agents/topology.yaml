@@ -1,0 +1,127 @@
+project: <project-name>
+version: 1
+objective: >
+  Replace this with the product mission and primary technical workflow.
+
+global_standards:
+  architecture: explicit-boundaries
+  code_quality:
+    - structured
+    - professional
+    - testable
+    - documented
+  mandatory_outputs:
+    - clear_scope
+    - explicit_assumptions
+    - verification_step
+
+workflow:
+  - agent: orchestrator
+    purpose: analyzes the task, impact, risks, and ownership
+  - agent: architecture-agent
+    purpose: validates boundaries, contracts, and dependency direction
+  - agent: implementation-agent
+    purpose: implements product behavior changes
+  - agent: prompt-agent
+    purpose: adjusts prompts, schemas, and AI behavior when applicable
+  - agent: qa-agent
+    purpose: covers tests, mocks, observability, and regressions
+  - agent: documentation-agent
+    purpose: reviews and synchronizes documentation
+
+context_layers:
+  - layer: root
+    files:
+      - AGENTS.md
+      - README.md
+      - project-objective.md
+  - layer: standards
+    files:
+      - standards/coding-standards.md
+      - standards/repository-operating-guide.md
+  - layer: topology
+    files:
+      - .agents/README.md
+      - .agents/topology.yaml
+  - layer: roles
+    files:
+      - .agents/roles/orchestrator.md
+      - .agents/roles/architecture-agent.md
+      - .agents/roles/implementation-agent.md
+      - .agents/roles/prompt-agent.md
+      - .agents/roles/qa-agent.md
+      - .agents/roles/documentation-agent.md
+  - layer: rules
+    files:
+      - .agents/rules/README.md
+      - .agents/rules/001-protect-dev-and-main.md
+  - layer: skills
+    files:
+      - .agents/skills/proj-doc-sync/SKILL.md
+      - .agents/skills/proj-architecture-refactor/SKILL.md
+      - .agents/skills/proj-feature-change/SKILL.md
+      - .agents/skills/proj-prompt-hardening/SKILL.md
+      - .agents/skills/proj-qa-observability/SKILL.md
+      - .agents/skills/proj-task-spec-authoring/SKILL.md
+  - layer: templates
+    files:
+      - .agents/templates/base-agent-prompt.md
+      - .agents/templates/agent-generation-template.md
+
+agents:
+  - id: orchestrator
+    file: .agents/roles/orchestrator.md
+    owns:
+      - cross-cutting decisions
+      - task decomposition
+      - acceptance criteria
+  - id: architecture-agent
+    file: .agents/roles/architecture-agent.md
+    owns:
+      - boundaries
+      - contracts
+      - dependency direction
+  - id: implementation-agent
+    file: .agents/roles/implementation-agent.md
+    owns:
+      - use cases
+      - product behavior
+      - implementation notes
+  - id: prompt-agent
+    file: .agents/roles/prompt-agent.md
+    owns:
+      - prompts
+      - structured outputs
+      - AI fail-safe behavior
+  - id: qa-agent
+    file: .agents/roles/qa-agent.md
+    owns:
+      - tests
+      - mocks
+      - debug traces
+  - id: documentation-agent
+    file: .agents/roles/documentation-agent.md
+    owns:
+      - docs
+      - architecture notes
+      - AI-base synchronization
+
+skills:
+  - id: proj-doc-sync
+    file: .agents/skills/proj-doc-sync/SKILL.md
+    purpose: reviews and synchronizes documentation
+  - id: proj-architecture-refactor
+    file: .agents/skills/proj-architecture-refactor/SKILL.md
+    purpose: reviews architecture and proposes safe refactors
+  - id: proj-feature-change
+    file: .agents/skills/proj-feature-change/SKILL.md
+    purpose: implements or debugs product behavior
+  - id: proj-prompt-hardening
+    file: .agents/skills/proj-prompt-hardening/SKILL.md
+    purpose: improves prompts, schemas, parsing, and AI fallbacks
+  - id: proj-qa-observability
+    file: .agents/skills/proj-qa-observability/SKILL.md
+    purpose: strengthens tests, mocks, and observability
+  - id: proj-task-spec-authoring
+    file: .agents/skills/proj-task-spec-authoring/SKILL.md
+    purpose: drafts task specifications and execution prompts
