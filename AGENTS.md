@@ -32,6 +32,8 @@ Prefer the smallest relevant context slice.
 ## Primary Activation Surface
 
 Use `.agents/skills/` as the primary Codex-facing surface for recurring workflows.
+Use `fast-tasks/AGENTS.md` for exact-message lightweight recurring tasks that
+are not broad enough to be a rule or skill.
 Treat `.agents/roles/` as supporting long-form role guides.
 Treat `.agents/templates/` as helper templates for creating or refining agent assets.
 Treat `.agents/topology.yaml` as the machine-readable map of the AI base.
@@ -67,14 +69,16 @@ Project-local rules:
 
 ## Sensitive File Handling
 
-Ignore any file whose path or filename contains the word `secret`, case-insensitively.
-Do not open, read, summarize, diff, modify, stage, or commit those files.
-If such files appear in search results, status output, or diffs, treat them as out of scope.
+Ignore any file or directory whose path or filename contains the word `secret`,
+case-insensitively. Do not enter, open, read, summarize, diff, modify, stage, or
+commit those paths. If such paths appear in search results, status output, or
+diffs, treat them as out of scope.
 
 ## Maintenance
 
 - Do not duplicate skills inside the product repository.
 - Keep durable rules in `standards/` or `.agents/rules/`.
+- Keep lightweight exact-message recurring tasks in `fast-tasks/AGENTS.md`.
 - Keep agent-facing assets under `.agents/`.
 - Keep this AI base concise.
 - If the structure changes, update `README.md`, `AGENTS.md`, and `.agents/topology.yaml`.

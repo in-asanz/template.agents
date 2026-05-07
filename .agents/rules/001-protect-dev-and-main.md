@@ -1,9 +1,12 @@
-# Rule 001: Protect `dev` And `main`
+# Rule 001: Protected Branches
 
 ## Rule
 
-It is forbidden to modify the `dev` branch or the `main` branch without the
-exact safety phrase from the user.
+If this project defines protected branches, it is forbidden to modify them
+without the exact safety phrase from the user.
+
+Default protected branches are `dev` and `main`. Replace this list during
+project setup if the repository uses different protected branches.
 
 ## What Counts As Modification
 
@@ -21,15 +24,15 @@ published remote state as a modification, including:
 
 ## Required Confirmation Standard
 
-Before performing one of those operations on `dev` or `main`, the agent must
+Before performing one of those operations on a protected branch, the agent must
 receive one exact safety phrase from the user:
 
 ```text
 Te doy permiso para modificar de forma segura la rama <branch-target> para <purpose>.
 ```
 
-`<branch-target>` must be replaced with `dev`, `main`, or `dev y main`,
-depending on the branch or branches affected by the requested operation.
+`<branch-target>` must be replaced with the protected branch or branches affected
+by the requested operation.
 `<purpose>` must describe the concrete operation or reason for the modification.
 
 ## Safety Phrase Handling
@@ -40,11 +43,11 @@ modification, attempts it and fails, or moves on to another user message or task
 the permission expires. The agent must not carry protected-branch permission
 forward through conversation context, memory, summaries, or later turns.
 
-If the user asks the agent to modify `dev` or `main` but does not provide the
+If the user asks the agent to modify a protected branch but does not provide the
 exact required phrase, the agent must not perform the operation. Instead, the
 agent must:
 
-1. warn clearly that the target branch is `dev`, `main`, or both
+1. warn clearly that the target is a protected branch
 2. state the exact operation that appears to require protected-branch access
 3. provide the exact safety phrase the user must send back
 4. wait for the user to send that phrase before continuing

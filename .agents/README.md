@@ -18,9 +18,11 @@ This folder contains the primary agent-facing surface of `<project-name>.agents`
 ## Areas
 
 - `skills/`: reusable workflows that Codex should activate directly
-- `roles/`: supporting guides for specialized agents in a multi-agent flow
+- `roles/`: supporting guides for specialized agents in a multi-agent flow,
+  including code analysis, architecture, implementation, prompt, QA, and docs
 - `rules/`: durable operational constraints that apply across agent workflows
-- `templates/`: patterns for generating or refining future agent assets
+- `templates/`: patterns for generating agents, implementation prompts,
+  architecture reviews, QA checks, and prompt-contract reviews
 - `topology.yaml`: machine-readable inventory of roles, skills, layers, and ownership
 
 ## Rule Of Thumb

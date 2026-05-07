@@ -9,6 +9,7 @@ rules, and prompting templates separate from production code.
 
 - Keep the root `AGENTS.md` short, stable, and discoverable.
 - Store reusable agent workflows under `.agents/skills/`.
+- Store lightweight exact-message recurring tasks under `fast-tasks/`.
 - Store longer supporting role guides under `.agents/roles/`.
 - Store durable cross-cutting constraints under `.agents/rules/`.
 - Store reusable creation patterns under `.agents/templates/`.
@@ -24,6 +25,8 @@ rules, and prompting templates separate from production code.
   standards/
     coding-standards.md
     repository-operating-guide.md
+  fast-tasks/
+    AGENTS.md
   .agents/
     AGENTS.md
     README.md
@@ -38,6 +41,7 @@ rules, and prompting templates separate from production code.
     roles/
       orchestrator.md
       architecture-agent.md
+      code-analysis-agent.md
       implementation-agent.md
       prompt-agent.md
       qa-agent.md
@@ -45,9 +49,22 @@ rules, and prompting templates separate from production code.
     rules/
       README.md
       001-protect-dev-and-main.md
+      002-task-worktree-flow.md
+      003-architecture-boundaries.md
+      004-environment-configuration.md
+      005-code-quality.md
+      006-testing-and-observability.md
+      007-prompt-contracts.md
+      008-git-and-github-safety.md
+      009-sensitive-file-access.md
+      010-task-folder-naming.md
     templates/
       base-agent-prompt.md
       agent-generation-template.md
+      feature-implementation-prompt.md
+      architecture-review-prompt.md
+      qa-regression-prompt.md
+      prompt-contract-review.md
 ```
 
 ## How To Adapt This Template
@@ -64,6 +81,7 @@ rules, and prompting templates separate from production code.
 - Project-specific skills.
 - Agent role guides.
 - Operating rules.
+- Lightweight exact-message recurring tasks that are not rules or skills.
 - Prompting and agent-asset templates.
 
 ## What Does Not Go Here
