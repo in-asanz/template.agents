@@ -4,90 +4,104 @@
 
 Your name is <agent-name>.
 
-This file applies to `<project-name>.agents/` and its subdirectories.
-Use this repository as the canonical AI base for work on the product repository
-at `<product-repo-path>`.
+This file applies to this repository root and its subdirectories. When the user
+refers to "the project", "the repository", or "this folder" without specifying
+another path, assume they mean this repository root.
 
 ## Purpose
 
-Keep durable Codex guidance, project-specific skills, multi-agent role guides,
-rules, and prompting templates separate from production code.
+Keep durable Codex guidance, project-specific skills, and rules next to the
+code or assets they govern, without duplicating detailed rule content in this
+file.
+
+## Product Context
+
+Replace this section with the product mission, supported providers, core
+workflows, and hard constraints that future agents must know before touching the
+project.
+
+## Code Map
+
+Replace this list with the real repository layout.
+
+- `src/`: product source code
+- `tests/`: deterministic tests and regression coverage
+- `docs/`: product documentation
+- `.agents/skills/`: directly activatable project workflows
+- `docs.ai/`: durable AI guidance, rules, and lessons
+
+## Local Startup
+
+Replace this section with the commands agents should use for setup, tests,
+linting, documentation, and local runtime.
 
 ## Read Order
 
 For non-trivial work, read in this order:
 
-1. `README.md`
-2. `project-objective.md`
-3. `standards/coding-standards.md`
-4. `standards/repository-operating-guide.md`
-5. `.agents/README.md`
-6. `.agents/topology.yaml`
-7. the most relevant skill in `.agents/skills/`
-8. if needed, the matching guide in `.agents/roles/`
-9. the product repository `README.md`, docs, and directly affected source files
+1. `AGENTS.md`
+2. `docs.ai/AGENTS.md` when working with durable AI documentation or rules
+3. the relevant durable rules in `docs.ai/rules/`
+4. `docs.ai/lessons/` when the task resembles a documented recurring agent
+   mistake
+5. the most relevant skill in `.agents/skills/`
+6. product docs, tests, and directly affected source files
 
 Prefer the smallest relevant context slice.
 
-## Primary Activation Surface
+## Repository Map
 
-Use `.agents/skills/` as the primary Codex-facing surface for recurring workflows.
-Use `fast-tasks/AGENTS.md` for exact-message lightweight recurring tasks that
-are not broad enough to be a rule or skill.
-Treat `.agents/roles/` as supporting long-form role guides.
-Treat `.agents/templates/` as helper templates for creating or refining agent assets.
-Treat `.agents/topology.yaml` as the machine-readable map of the AI base.
+```text
+.
+  AGENTS.md
+  .agents/
+    AGENTS.md
+    skills/
+      example-workflow/
+        SKILL.md
+  docs.ai/
+    AGENTS.md
+    lessons/
+      AGENTS.md
+      lesson-template.md
+    rules/
+      AGENTS.md
+      personal-ai-assets.md
+      sensitive-file-access.md
+```
+
+This repository is not for secrets, credentials, private environment values, or
+untracked personal AI guidance committed to Git.
 
 ## Default Skills
 
-- `proj-doc-sync`: documentation review, updates, and AI-base synchronization.
-- `proj-architecture-refactor`: architecture review and safe refactor planning.
-- `proj-feature-change`: implementation and debugging of product behavior.
-- `proj-prompt-hardening`: prompts, schemas, AI parsing, and fallback behavior.
-- `proj-qa-observability`: tests, mocks, debug artifacts, and regression control.
-- `proj-task-spec-authoring`: create task specifications and execution prompts.
+- `example-workflow`: replace or delete this placeholder with a real recurring
+  project workflow.
 
-## Product Repository Guidance
+## Rule Index
 
-The target product codebase lives at `<product-repo-path>`.
-This AI base is the durable instruction source for that project.
+Shared durable rules live in `docs.ai/rules/AGENTS.md`.
+Developer-local personal rules live in `docs.ai/rules/AGENTS.personal.md` when
+present.
+Recurring agent mistakes and lessons learned live in `docs.ai/lessons/`.
 
-For non-trivial product work, read the relevant local docs after this AI base:
-
-- `README.md`
-- `docs/`
-- source files directly involved in the request
-- relevant tests
-
-Project-local rules:
-
-- Preserve the intended architecture and dependency direction.
-- Keep business/domain logic out of external adapters.
-- Do not break existing functionality.
-- Update tests and docs when behavior or architecture changes.
-- Prefer small, reversible changes.
-
-## Sensitive File Handling
-
-Ignore any file or directory whose path or filename contains the word `secret`,
-case-insensitively. Do not enter, open, read, summarize, diff, modify, stage, or
-commit those paths. If such paths appear in search results, status output, or
-diffs, treat them as out of scope.
+If ignored personal AI files or folders exist, review them after the matching
+shared guidance. Personal assets extend local developer context but are not
+shared project contracts.
 
 ## Maintenance
 
-- Do not duplicate skills inside the product repository.
-- Keep durable rules in `standards/` or `.agents/rules/`.
-- Keep lightweight exact-message recurring tasks in `fast-tasks/AGENTS.md`.
-- Keep agent-facing assets under `.agents/`.
-- Keep this AI base concise.
-- If the structure changes, update `README.md`, `AGENTS.md`, and `.agents/topology.yaml`.
+- Keep directly activatable skills under `.agents/skills/`.
+- Keep durable operating standards and rules in `docs.ai/rules/`.
+- Keep recurring observed agent mistakes in `docs.ai/lessons/`; promote them
+  to `docs.ai/rules/` only when they become mandatory cross-cutting behavior.
+- Keep this file concise; do not duplicate rule content from `docs.ai/rules/`.
+- If the structure changes, update `AGENTS.md` and `docs.ai/AGENTS.md`.
 
-## Execution Rule
+## Final Response Rule
 
-When the user asks for a code or behavior change in the product repository, finish with
-a real verification step against the affected flow, unless the user explicitly says not
-to run it.
+When any skill is used during a turn, explicitly list the skill names in the
+final response so the user knows which skills were applied.
 
 ## SOUL
 

@@ -1,34 +1,23 @@
-# AGENTS.md
+# .agents
 
 ## Scope
 
 This file applies to `.agents/` and its subdirectories.
-Use it as the primary behavioral guide for agent-facing assets in this repository.
 
 ## Purpose
 
-Keep `.agents/` as the primary activation surface for reusable AI workflows and
-multi-agent guidance.
+Keep directly activatable project workflows here. A skill should describe when
+to use it, what context to read, and the practical workflow to follow.
 
 ## Layout
 
-- `skills/`: activation surface for recurring workflows
-- `roles/`: long-form supporting role guides
-- `rules/`: durable operational constraints for agent behavior
-- `templates/`: reusable patterns for creating new agent assets
-- `topology.yaml`: machine-readable structure map of the AI base
+- `skills/`: reusable workflows with a `SKILL.md` entrypoint
 
 ## Rules
 
-- Prefer `skills/` over `roles/` when the workflow should be directly activatable.
-- Use `roles/` only for longer supporting guidance that complements a skill.
-- Use `rules/` for durable behavioral constraints that must apply across skills and roles.
-- Keep `templates/` concise and reusable.
-- Keep `topology.yaml` aligned with the real folder structure.
-- Do not delete files or directories unless the user explicitly asks for that deletion.
-
-## SOUL
-
-- Be concise.
-- Be clear.
-- Be direct.
+- Keep skills concise and project-specific.
+- Prefer one skill per recurring workflow.
+- Do not store durable cross-cutting rules here; use `../docs.ai/rules/`.
+- Do not store secrets, credentials, or private environment values.
+- If ignored personal skill assets exist, load shared skill guidance first and
+  then apply the matching `.personal` guidance.

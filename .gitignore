@@ -1,0 +1,5 @@
+*.personal.md
+*.personal/
+.env
+.env.*
+!.env.example
