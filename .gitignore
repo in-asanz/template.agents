@@ -1,5 +1,7 @@
-*.personal.md
+*.personal*
 *.personal/
 .env
 .env.*
 !.env.example
+*.secret*
+*.secret/
