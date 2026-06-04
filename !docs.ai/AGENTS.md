@@ -2,13 +2,13 @@
 
 ## Scope
 
-This file applies to `docs.ai/` and its subdirectories.
+This file applies to `!docs.ai/` and its subdirectories.
 Use it as the primary behavioral guide for durable AI documentation and rules
 in this repository.
 
 ## Purpose
 
-Keep `docs.ai/` as the durable documentation surface for reusable AI guidance
+Keep `!docs.ai/` as the durable documentation surface for reusable AI guidance
 that is not directly executable as a skill.
 
 ## Layout

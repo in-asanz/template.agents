@@ -1,4 +1,4 @@
-# docs.ai/rules
+# !docs.ai/rules
 
 This folder contains durable cross-cutting behavioral constraints for agents.
 

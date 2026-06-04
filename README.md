@@ -15,7 +15,7 @@ multi-agent framework.
     skills/
       example-workflow/
         SKILL.md
-  docs.ai/
+  !docs.ai/
     AGENTS.md
     lessons/
       AGENTS.md
@@ -30,9 +30,9 @@ multi-agent framework.
 
 1. Replace placeholders in `AGENTS.md`.
 2. Replace `example-workflow` with real project skills.
-3. Add only mandatory, cross-cutting rules under `docs.ai/rules/`.
+3. Add only mandatory, cross-cutting rules under `!docs.ai/rules/`.
 4. Keep `.personal.md` files and `.personal/` folders ignored by Git.
-5. Keep lessons in `docs.ai/lessons/` until they deserve promotion to rules.
+5. Keep lessons in `!docs.ai/lessons/` until they deserve promotion to rules.
 
 ## What Belongs Here
 

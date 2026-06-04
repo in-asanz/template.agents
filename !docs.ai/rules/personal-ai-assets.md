@@ -12,7 +12,7 @@ AI context, but they are not shared project contracts.
 
 This rule applies to developer-local AI-focused files and folders under the AI
 base, product repository, worktrees, and local documentation folders such as
-`docs.ai/`.
+`!docs.ai/`.
 
 It covers personal variants such as:
 

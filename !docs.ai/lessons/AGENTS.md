@@ -1,8 +1,8 @@
-# docs.ai/lessons
+# !docs.ai/lessons
 
 ## Scope
 
-This file applies to `docs.ai/lessons/` and its subdirectories.
+This file applies to `!docs.ai/lessons/` and its subdirectories.
 
 Use this folder to document recurring observed mistakes made by AI agents while
 working on this repository. Lessons are memory and review material; they are not
@@ -50,5 +50,5 @@ already covers the pattern.
 Useful checks:
 
 ```powershell
-rg -n "<topic>|<symptom>" docs.ai/lessons docs.ai/rules --glob '!**/*secret*'
+rg -n "<topic>|<symptom>" !docs.ai/lessons !docs.ai/rules --glob '!**/*secret*'
 ```

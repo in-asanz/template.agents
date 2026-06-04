@@ -28,7 +28,7 @@ Replace this list with the real repository layout.
 - `tests/`: deterministic tests and regression coverage
 - `docs/`: product documentation
 - `.agents/skills/`: directly activatable project workflows
-- `docs.ai/`: durable AI guidance, rules, and lessons
+- `!docs.ai/`: durable AI guidance, rules, and lessons
 
 ## Local Startup
 
@@ -40,9 +40,9 @@ linting, documentation, and local runtime.
 For non-trivial work, read in this order:
 
 1. `AGENTS.md`
-2. `docs.ai/AGENTS.md` when working with durable AI documentation or rules
-3. the relevant durable rules in `docs.ai/rules/`
-4. `docs.ai/lessons/` when the task resembles a documented recurring agent
+2. `!docs.ai/AGENTS.md` when working with durable AI documentation or rules
+3. the relevant durable rules in `!docs.ai/rules/`
+4. `!docs.ai/lessons/` when the task resembles a documented recurring agent
    mistake
 5. the most relevant skill in `.agents/skills/`
 6. product docs, tests, and directly affected source files
@@ -59,7 +59,7 @@ Prefer the smallest relevant context slice.
     skills/
       example-workflow/
         SKILL.md
-  docs.ai/
+  !docs.ai/
     AGENTS.md
     lessons/
       AGENTS.md
@@ -80,10 +80,10 @@ untracked personal AI guidance committed to Git.
 
 ## Rule Index
 
-Shared durable rules live in `docs.ai/rules/AGENTS.md`.
-Developer-local personal rules live in `docs.ai/rules/AGENTS.personal.md` when
+Shared durable rules live in `!docs.ai/rules/AGENTS.md`.
+Developer-local personal rules live in `!docs.ai/rules/AGENTS.personal.md` when
 present.
-Recurring agent mistakes and lessons learned live in `docs.ai/lessons/`.
+Recurring agent mistakes and lessons learned live in `!docs.ai/lessons/`.
 
 If ignored personal AI files or folders exist, review them after the matching
 shared guidance. Personal assets extend local developer context but are not
@@ -92,11 +92,11 @@ shared project contracts.
 ## Maintenance
 
 - Keep directly activatable skills under `.agents/skills/`.
-- Keep durable operating standards and rules in `docs.ai/rules/`.
-- Keep recurring observed agent mistakes in `docs.ai/lessons/`; promote them
-  to `docs.ai/rules/` only when they become mandatory cross-cutting behavior.
-- Keep this file concise; do not duplicate rule content from `docs.ai/rules/`.
-- If the structure changes, update `AGENTS.md` and `docs.ai/AGENTS.md`.
+- Keep durable operating standards and rules in `!docs.ai/rules/`.
+- Keep recurring observed agent mistakes in `!docs.ai/lessons/`; promote them
+  to `!docs.ai/rules/` only when they become mandatory cross-cutting behavior.
+- Keep this file concise; do not duplicate rule content from `!docs.ai/rules/`.
+- If the structure changes, update `AGENTS.md` and `!docs.ai/AGENTS.md`.
 
 ## Final Response Rule
 
