@@ -19,8 +19,8 @@ Install with the cross-agent `skills` CLI:
 npx skills add in-asanz/template.agents -g -a codex -y
 ```
 
-Then ask an agent to use `$template-agents` when you want to audit, create, or
-normalize AI-agent guidance in a repository.
+Then ask an agent to use `$template-agents` when you want to review, implement,
+or reorganize AI-agent guidance in a repository.
 
 ## Structure
 
