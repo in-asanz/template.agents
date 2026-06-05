@@ -16,8 +16,8 @@ from stable instructions, ordered context reads, or verification expectations.
 ## Context To Read
 
 1. `AGENTS.md`
-2. `docs.ai/AGENTS.md`
-3. relevant rules in `docs.ai/rules/`
+2. `!docs.ai/AGENTS.md`
+3. relevant rules in `!docs.ai/rules/`
 4. directly affected project files
 
 ## Workflow

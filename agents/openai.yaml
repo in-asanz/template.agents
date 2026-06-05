@@ -1,0 +1,4 @@
+interface:
+  display_name: "Template Agents"
+  short_description: "Audit and apply AI-agent repository structure"
+  default_prompt: "Use $template-agents to audit or normalize this repository's AI-agent guidance."
