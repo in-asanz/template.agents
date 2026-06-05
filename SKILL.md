@@ -35,14 +35,10 @@ Use this repository's root files as the canonical template:
 
 1. Identify the target project root. If the user did not provide one, use the
    current working directory.
-2. Run a read-only audit first:
-
-```powershell
-python scripts/audit_template_agents.py --target <project-root>
-```
-
-3. Inspect `AGENTS.md`, `.agents/`, `!docs.ai/`, and any nearby AI guidance
+2. Inspect `AGENTS.md`, `.agents/`, `!docs.ai/`, and any nearby AI guidance
    files before changing structure.
+3. Compare the target project against the canonical structure and list missing,
+   misplaced, placeholder, duplicated, stale, or unclear guidance.
 4. For a new or empty project, copy the canonical template files into the
    target root, then replace placeholders with project-specific context.
 5. For an existing project, preserve useful content and move it into the
@@ -54,7 +50,7 @@ python scripts/audit_template_agents.py --target <project-root>
 6. Review content quality after structure is correct. Recommend changes when
    guidance is vague, duplicated, stale, too personal, too broad, or likely to
    confuse future AI agents.
-7. Run the audit again after changes and report remaining warnings.
+7. Re-read the final structure and report remaining warnings.
 
 ## Content Review
 
@@ -85,7 +81,6 @@ Check that:
 Use proportionate checks:
 
 ```powershell
-python scripts/audit_template_agents.py --target <project-root>
 git status --short
 ```
 

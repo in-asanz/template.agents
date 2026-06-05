@@ -71,7 +71,5 @@ From this repository:
 
 ```powershell
 python <path-to-skill-creator>\scripts\quick_validate.py .
-python -m unittest discover -s tests
-python scripts/audit_template_agents.py --target . --allow-template-placeholders
-python scripts/audit_template_agents.py --target . --allow-template-placeholders --json
+npx skills add . --list
 ```
