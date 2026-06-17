@@ -1,9 +1,9 @@
-# template.agents
+# Agent Guidance Template
 
-Minimal AI-base template for a repository.
+Minimal portable template for repository-level AI agent guidance.
 
-Use this structure when a project needs durable agent guidance without a heavy
-multi-agent framework.
+Use this when a project needs durable guidance without a heavy multi-agent
+framework or product-specific assumptions.
 
 ## Structure
 
@@ -11,28 +11,21 @@ multi-agent framework.
 .
   AGENTS.md
   .agents/
-    AGENTS.md
     skills/
-      example-workflow/
+      <workflow-name>/
         SKILL.md
   !docs.ai/
-    AGENTS.md
     lessons/
-      AGENTS.md
-      lesson-template.md
     rules/
-      AGENTS.md
-      personal-ai-assets.md
-      sensitive-file-access.md
 ```
 
 ## Adaptation Checklist
 
-1. Replace placeholders in `AGENTS.md`.
-2. Replace `example-workflow` with real project skills.
-3. Add only mandatory, cross-cutting rules under `!docs.ai/rules/`.
-4. Keep `.personal.md` files and `.personal/` folders ignored by Git.
-5. Keep lessons in `!docs.ai/lessons/` until they deserve promotion to rules.
+1. Add a concise `AGENTS.md`.
+2. Add project skills only when a workflow is repeated.
+3. Add durable rules only when they are mandatory.
+4. Add lessons only for recurring mistakes worth preserving.
+5. Keep local/private guidance out of published files.
 
 ## What Belongs Here
 
